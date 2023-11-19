@@ -1,23 +1,26 @@
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
 public class Main {
     public static void main(String[] args) {
-        char c1 = '1';
-        char c2 = '2';
-        char c3 = '3';
-        System.out.println("Char 1: " + c1);
-        System.out.println("Char 2: " + c2);
-        System.out.println("Char 3: " + c3);
+        String s1 = "This is a String!";
+        System.out.println(s1);
 
-        char dollarSign = '$';
-        System.out.println("Currency: " + dollarSign);
+        String s2 = new String("This is also a String!");
+        System.out.println(s2);
 
-        char a1 = 'a';
-        char a2 = 'b';
-        char a3 = 'c';
-        System.out.print(Character.toUpperCase(a1));
-        System.out.print(Character.toUpperCase(a2));
-        System.out.println(Character.toUpperCase(a3));
+        String s3 = "Shirt size: ";
+        String s4 = "M";
+        String s5 = s3 + s4 + ", Qty: " + 4;
+        System.out.println(s5);
+
+        char[] chars = {'H', 'e', 'l', 'l', 'o'};
+        String s6 = new String(chars);
+        System.out.println(s6);
+
+        char[]  chars2 = s6.toCharArray();
+        for (char c : chars2)
+        {
+            System.out.println(c);
+        }
     }
 }
