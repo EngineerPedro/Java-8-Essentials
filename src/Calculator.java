@@ -9,9 +9,15 @@ import java.util.Scanner;
 public class Calculator {
 
     public static void main(String[] args) {
-        String s1 = getInput("Enter a numeric value: ");
-        String s2 = getInput("Enter a numeric value: ");
-        String op = getInput("Choose an operation (+ - * /):");
+        Calculator calc = new Calculator();
+        calc.Calculate();
+    }
+
+    protected void Calculate() {
+        InputHelper helper = new InputHelper();
+        String s1 = helper.getInput("Enter a numeric value: ");
+        String s2 = helper.getInput("Enter a numeric value: ");
+        String op = helper.getInput("Choose an operation (+ - * /):");
 
         double result = 0;
 
@@ -41,10 +47,12 @@ public class Calculator {
         }
     }
 
-    private static String getInput(String prompt) {
-        System.out.print(prompt);
-        Scanner sc = new Scanner(System.in);
-        return sc.nextLine();
+    class InputHelper {
+        private String getInput(String prompt) {
+            System.out.print(prompt);
+            Scanner sc = new Scanner(System.in);
+            return sc.nextLine();
+        }
     }
 
 }
