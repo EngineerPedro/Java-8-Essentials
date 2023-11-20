@@ -1,22 +1,33 @@
+import java.text.DateFormat;
 import java.text.NumberFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String s1 = "Welcome to California!";
-        System.out.println("Length of string: " + s1.length());
+        Date d = new Date();
+        System.out.println(d);
 
-        int position = s1.indexOf("California");
-        System.out.println("Position of substring: " + position);
+        GregorianCalendar gc = new GregorianCalendar(2009, 1, 28);
+        gc.add(GregorianCalendar.DATE, 1);
+        Date d2 = gc.getTime();
+        System.out.println(d2);
 
-        String sub = s1.substring(11);
-        System.out.println(sub);
+        DateFormat df = DateFormat.getDateInstance(DateFormat.FULL);
+        System.out.println(df.format(d2));
 
-        String s2 = "Welcome!         ";
-        int len1 = s2.length();
-        System.out.println(len1);
-        String s3 = s2.trim();
-        System.out.println(s3.length());
+        LocalDateTime ldt = LocalDateTime.now();
+        System.out.println(ldt);
+
+        LocalDate ld = LocalDate.of(2009, 1, 28);
+        System.out.println(ld);
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("M/d/yyyy");
+        System.out.println(dtf.format(ld));
     }
 }
