@@ -1,19 +1,14 @@
-
-
-
-
-import utilities.MathHelper;
-
 import java.util.Scanner;
 
 public class Calculator {
 
     public static void main(String[] args) {
         Calculator calc = new Calculator();
-        calc.Calculate();
+        calc.calculate();
     }
 
-    protected void Calculate() {
+    protected void calculate() {
+
         InputHelper helper = new InputHelper();
         String s1 = helper.getInput("Enter a numeric value: ");
         String s2 = helper.getInput("Enter a numeric value: ");
@@ -47,12 +42,5 @@ public class Calculator {
         }
     }
 
-    class InputHelper {
-        private String getInput(String prompt) {
-            System.out.print(prompt);
-            Scanner sc = new Scanner(System.in);
-            return sc.nextLine();
-        }
-    }
-
+ 
 }

@@ -1,5 +1,3 @@
-package utilities;
-
 public class MathHelper {
 
     public static double addValues(String s1, String s2) {
