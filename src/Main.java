@@ -1,35 +1,28 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-
-        String[] months = {"January", "February", "March",
+        static String[] months = {"January", "February", "March",
                 "April", "May", "June",
                 "July", "August", "September",
                 "October", "November", "December"};
 
-//        for (int i = 0; i < months.length; i++) {
-//            System.out.println(months[i]);
-//        }
+        public static void main(String[] args) {
+            loopIt("Months of the year");
+            loopIt("Second run");
+            loopIt("Third run");
+        }
 
-//        for (int i = months.length-1; i >= 0; i--) {
-//            System.out.println(months[i]);
-//        }
+        static void loopIt(String label) {
 
-//        for (String month : months) {
-//            System.out.println(month);
-//        }
+            System.out.println(label);
+            for (int i = 0; i < label.length(); i++) {
+                System.out.print("*");
+            }
+            System.out.println("");
 
-//        int counter = 0;
-//        while (counter < months.length) {
-//            System.out.println(months[counter]);
-//            counter++;
-//        }
+            for (int i = 0; i < months.length; i++) {
+                System.out.println(months[i]);
+            }
+        }
 
-        int counter = 0;
-        do {
-            System.out.println(months[counter]);
-            counter++;
-        } while (counter < months.length);
-    }
 }
