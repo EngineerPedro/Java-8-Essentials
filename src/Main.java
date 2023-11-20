@@ -1,30 +1,23 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        List<String> list = new ArrayList<>();
+        Map<String, String> map = new HashMap<>();
 
-        list.add("California");
-        list.add("Oregon");
-        list.add("Washington");
+        map.put("California", "Sacramento");
+        map.put("Oregon", "Salem");
+        map.put("Washington", "Olympia");
+        System.out.println(map);
 
-        System.out.println(list);
+        map.put("Alaska", "Juneau");
+        System.out.println(map);
 
-        list.add("Alaska");
-        System.out.println(list);
+        String cap = map.get("Oregon");
+        System.out.println("The capitol of Oregon is " + cap);
 
-        list.remove(0);
-        System.out.println(list);
-
-        String state = list.get(1);
-        System.out.println("The second state is " + state);
-
-        int pos = list.indexOf("Alaska");
-        System.out.println("Alaska is at position " + pos);
+        map.remove("California");
+        System.out.println(map);
 
     }
 }
