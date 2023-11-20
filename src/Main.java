@@ -1,25 +1,30 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        String[][] states = new String[3][2];
-        states[0][0] = "California";
-        states[0][1] = "Sacramento";
-        states[1][0] = "Oregon";
-        states[1][1] = "Salem";
-        states[2][0] = "Washington";
-        states[2][1] = "Olympia";
+        List<String> list = new ArrayList<>();
 
-        for (int i = 0; i < states.length; i++) {
-            StringBuilder sb = new StringBuilder();
-            sb.append("The capitol of ")
-                    .append(states[i][0])
-                    .append(" is ")
-                    .append(states[i][1])
-                    .append(".");
-            System.out.println(sb);
-        }
+        list.add("California");
+        list.add("Oregon");
+        list.add("Washington");
+
+        System.out.println(list);
+
+        list.add("Alaska");
+        System.out.println(list);
+
+        list.remove(0);
+        System.out.println(list);
+
+        String state = list.get(1);
+        System.out.println("The second state is " + state);
+
+        int pos = list.indexOf("Alaska");
+        System.out.println("Alaska is at position " + pos);
+
     }
 }
