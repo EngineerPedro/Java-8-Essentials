@@ -4,18 +4,19 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Locale locale = new Locale("da", "DK");
+        String s1 = "Welcome to California!";
+        System.out.println("Length of string: " + s1.length());
 
-        double doubleValue = 1_234_567.89;
+        int position = s1.indexOf("California");
+        System.out.println("Position of substring: " + position);
 
-        NumberFormat numF = NumberFormat.getNumberInstance(locale);
-        System.out.println("Number: " + numF.format(doubleValue));
+        String sub = s1.substring(11);
+        System.out.println(sub);
 
-        NumberFormat curF = NumberFormat.getCurrencyInstance(locale);
-        System.out.println("Currency: " + curF.format(doubleValue));
-
-        NumberFormat intF = NumberFormat.getIntegerInstance();
-        System.out.println("Integer: " + intF.format(doubleValue));
-
+        String s2 = "Welcome!         ";
+        int len1 = s2.length();
+        System.out.println(len1);
+        String s3 = s2.trim();
+        System.out.println(s3.length());
     }
 }
