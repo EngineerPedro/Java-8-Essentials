@@ -10,24 +10,18 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Date d = new Date();
-        System.out.println(d);
+        Scanner sc = new Scanner(System.in);
 
-        GregorianCalendar gc = new GregorianCalendar(2009, 1, 28);
-        gc.add(GregorianCalendar.DATE, 1);
-        Date d2 = gc.getTime();
-        System.out.println(d2);
+        System.out.print("Enter a numeric value: ");
+        String input1 = sc.nextLine();
+        double d1 = Double.parseDouble(input1);
 
-        DateFormat df = DateFormat.getDateInstance(DateFormat.FULL);
-        System.out.println(df.format(d2));
+        System.out.print("Enter a numeric value: ");
+        String input2 = sc.nextLine();
+        double d2 = Double.parseDouble(input2);
 
-        LocalDateTime ldt = LocalDateTime.now();
-        System.out.println(ldt);
+        double result = d1 + d2;
 
-        LocalDate ld = LocalDate.of(2009, 1, 28);
-        System.out.println(ld);
-
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("M/d/yyyy");
-        System.out.println(dtf.format(ld));
+        System.out.println("The answer is " + result);
     }
 }
