@@ -3,24 +3,33 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        String[] months = {"January", "February", "March",
+                "April", "May", "June",
+                "July", "August", "September",
+                "October", "November", "December"};
 
-        System.out.print("Enter a number: ");
-        String input = sc.nextLine();
-        int monthNumber = Integer.parseInt(input);
+//        for (int i = 0; i < months.length; i++) {
+//            System.out.println(months[i]);
+//        }
 
-        switch (monthNumber) {
-            case 1:
-                System.out.println("The month is January");
-                break;
-            case 2:
-                System.out.println("The month is February");
-                break;
-            case 3:
-                System.out.println("The month is March");
-                break;
-            default:
-                System.out.println("You chose another month!");
-        }
+//        for (int i = months.length-1; i >= 0; i--) {
+//            System.out.println(months[i]);
+//        }
+
+//        for (String month : months) {
+//            System.out.println(month);
+//        }
+
+//        int counter = 0;
+//        while (counter < months.length) {
+//            System.out.println(months[counter]);
+//            counter++;
+//        }
+
+        int counter = 0;
+        do {
+            System.out.println(months[counter]);
+            counter++;
+        } while (counter < months.length);
     }
 }
