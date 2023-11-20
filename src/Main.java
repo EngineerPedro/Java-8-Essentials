@@ -1,26 +1,18 @@
 
 public class Main {
     public static void main(String[] args) {
-        String welcome = "Welcome!";
-        char[] chars = welcome.toCharArray();
+        int monthNumber = 13;
 
-        try {
-
-            if (chars.length < 10) {
-                throw (new Exception("My custom message"));
-            }
-
-            char lastChar = chars[chars.length - 1];
-            System.out.println(lastChar);
-
-            String sub = welcome.substring(10);
-            System.out.println("Substring: " + sub);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Array index problem!");
-        } catch (StringIndexOutOfBoundsException e) {
-            System.out.println("String index problem!");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        if (monthNumber >= 1 && monthNumber <= 3) {
+            System.out.println("You're in Quarter 1");
+        } else if (monthNumber >= 4 && monthNumber <= 6) {
+            System.out.println("You're in Quarter 2");
+        } else if (monthNumber >= 7 && monthNumber <= 9) {
+            System.out.println("You're in Quarter 3");
+        } else if (monthNumber >= 10 && monthNumber <= 12) {
+            System.out.println("You're in Quarter 4");
+        } else {
+            System.out.println("That's an unknown month!");
         }
     }
 }
