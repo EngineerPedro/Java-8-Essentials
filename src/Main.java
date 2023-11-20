@@ -1,18 +1,26 @@
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int monthNumber = 13;
 
-        if (monthNumber >= 1 && monthNumber <= 3) {
-            System.out.println("You're in Quarter 1");
-        } else if (monthNumber >= 4 && monthNumber <= 6) {
-            System.out.println("You're in Quarter 2");
-        } else if (monthNumber >= 7 && monthNumber <= 9) {
-            System.out.println("You're in Quarter 3");
-        } else if (monthNumber >= 10 && monthNumber <= 12) {
-            System.out.println("You're in Quarter 4");
-        } else {
-            System.out.println("That's an unknown month!");
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        String input = sc.nextLine();
+        int monthNumber = Integer.parseInt(input);
+
+        switch (monthNumber) {
+            case 1:
+                System.out.println("The month is January");
+                break;
+            case 2:
+                System.out.println("The month is February");
+                break;
+            case 3:
+                System.out.println("The month is March");
+                break;
+            default:
+                System.out.println("You chose another month!");
         }
     }
 }
