@@ -2,50 +2,65 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String s1 = getInput("Enter value 1: ");
-        String s2 = getInput("Enter value 2: ");
-        String s3 = getInput("Enter value 3: ");
+        String s1 = getInput("Enter a numeric value: ");
+        String s2 = getInput("Enter a numeric value: ");
+        String op = getInput("Choose an operation (+ - * /):");
 
-        double result = addValues(s1, s2);
-        System.out.println("The answer is " + result);
+        double result = 0;
 
-        double result2 = addValues(s1, s2, s3);
-        System.out.println("The answer for 3 values is " + result2);
+        try {
+            switch (op) {
+                case "+":
+                    result = addValues(s1, s2);
+                    break;
+                case "-":
+                    result = subtractValues(s1, s2);
+                    break;
+                case "*":
+                    result = multiplyValues(s1, s2);
+                    break;
+                case "/":
+                    result = divideValues(s1, s2);
+                    break;
+                default:
+                    System.out.println("Unrecognized operation!");
+                    return;
+            }
 
-        double result3 = addValues(s1, s2, s3, s1, s2, s3);
-        System.out.println("The answer for many values is " + result3);
+            System.out.println("The answer is " + result);
 
+        } catch (Exception e) {
+            System.out.println("Number formatting exception " + e.getMessage());
+        }
     }
 
-    static String getInput(String prompt) {
+    private static double addValues(String s1, String s2) {
+        double d1 = Double.parseDouble(s1);
+        double d2 = Double.parseDouble(s2);
+        return d1 + d2;
+    }
+
+    private static double subtractValues(String s1, String s2) {
+        double d1 = Double.parseDouble(s1);
+        double d2 = Double.parseDouble(s2);
+        return d1 - d2;
+    }
+
+    private static double multiplyValues(String s1, String s2) {
+        double d1 = Double.parseDouble(s1);
+        double d2 = Double.parseDouble(s2);
+        return d1 * d2;
+    }
+
+    private static double divideValues(String s1, String s2) {
+        double d1 = Double.parseDouble(s1);
+        double d2 = Double.parseDouble(s2);
+        return d1 / d2;
+    }
+
+    private static String getInput(String prompt) {
         System.out.print(prompt);
         Scanner sc = new Scanner(System.in);
-
         return sc.nextLine();
     }
-
-    static double addValues(String s1, String s2) {
-        double d1 = Double.parseDouble(s1);
-        double d2 = Double.parseDouble(s2);
-        double result = d1 + d2;
-        return result;
-    }
-
-    static double addValues(String s1, String s2, String s3) {
-        double d1 = Double.parseDouble(s1);
-        double d2 = Double.parseDouble(s2);
-        double d3 = Double.parseDouble(s3);
-        double result = d1 + d2 + d3;
-        return result;
-    }
-
-    static double addValues(String ... values) {
-        double result = 0;
-        for (String value : values) {
-            double d = Double.parseDouble(value);
-            result += d;
-        }
-        return result;
-    }
-
 }
