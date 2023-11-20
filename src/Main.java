@@ -10,14 +10,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String s = null;
-
-        System.out.println(s);
-
         String welcome = "Welcome!";
         char[] chars = welcome.toCharArray();
-        char lastChar = chars[chars.length - 1];
-        System.out.println(lastChar);
 
+        for (int i = 0; i < chars.length; i++) {
+            System.out.println(chars[i]);
+        }
     }
 }
