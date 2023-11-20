@@ -1,33 +1,21 @@
 import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String str1 = "Hello";
-        String str2 = "Hello";
+        Locale locale = new Locale("da", "DK");
 
-        if (str1 == str2) {
-            System.out.println("They match!");
-        } else {
-            System.out.println("They don't match!");
-        }
+        double doubleValue = 1_234_567.89;
 
-        String str3 = "hello";
-        if (str1 == str3) {
-            System.out.println("They match!");
-        } else {
-            System.out.println("They don't match!");
-        }
+        NumberFormat numF = NumberFormat.getNumberInstance(locale);
+        System.out.println("Number: " + numF.format(doubleValue));
 
-        String part1 = "Hello ";
-        String part2 = "WORLD";
-        String str4 = part1 + part2;
-        String str5 = "Hello World";
-        if (str4.equalsIgnoreCase(str5)) {
-            System.out.println("They match!");
-        } else {
-            System.out.println("They don't match!");
-        }
+        NumberFormat curF = NumberFormat.getCurrencyInstance(locale);
+        System.out.println("Currency: " + curF.format(doubleValue));
+
+        NumberFormat intF = NumberFormat.getIntegerInstance();
+        System.out.println("Integer: " + intF.format(doubleValue));
 
     }
 }
