@@ -8,14 +8,9 @@ public class Main {
     public static void main(String[] args) {
 
         List<Olive> olives = new ArrayList<>();
-        Olive olive1 = new Olive();
-        olives.add(olive1);
-        Olive olive2 = new Olive();
-        olive2.setOil(1);
-        olives.add(olive2);
-        Olive olive3 = new Olive();
-        olive3.setOil(4);
-        olives.add(olive3);
+        olives.add(new Olive("California", 0x2E0854, 3));
+        olives.add(new Olive("Colorado", 0x2E0854, 7));
+        olives.add(new Olive("Nevada", 0x2E0854, 12));
 
         OlivePress press = new OlivePress();
         int totalOil = press.getOil(olives);
